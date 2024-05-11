@@ -1,7 +1,8 @@
 
-![face1](https://github.com/recep-yildiz/Facial-QR-Code/assets/16324956/c1204a57-5977-424a-b95b-e44d66e4d05c)
-
 # Facial QR Code Project
+
+![face1 (1)](https://github.com/recep-yildiz/Facial-QR-Code/assets/16324956/3df6e690-e238-4f3e-bd7b-e1cd0ac0016e)
+
 
 ## Overview
 This project integrates [face-api.js](https://github.com/justadudewhohacks/face-api.js) with QR code generation and basic reading of QR codes to create a simple web application that aims using biometric verification without any database storage. 
