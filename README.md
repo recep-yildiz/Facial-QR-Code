@@ -1,3 +1,6 @@
+
+![face1](https://github.com/recep-yildiz/Facial-QR-Code/assets/16324956/c1204a57-5977-424a-b95b-e44d66e4d05c)
+
 # Facial QR Code Project
 
 ## Overview
