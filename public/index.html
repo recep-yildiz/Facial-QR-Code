@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AFID App</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Include the jsQR library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <!-- QR generate -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+
+<body>
+    <div style="height: 70px; width: 100%; text-transform: uppercase; font-size: 50px; font-family: monospace; text-align: center;
+        background-color: #3498db; color: #f8f8f8; padding: 20px 0px 10px;">
+        Facial QR Code
+    </div>
+
+    <div id="content">
+        <video id="video" width="720" height="560" autoplay muted></video>
+        <canvas id="canvas"></canvas>
+        <canvas id="captureCanvas" width="720" height="560"></canvas>
+    </div>
+
+    <select id="cameraSelect"></select>
+    <div id="detections"></div>
+
+    <!-- Popup Overlay -->
+    <div id="popup-overlay">
+        <!-- Popup Content -->
+        <div id="popup-content">
+            <div style="min-width: 300px">
+                <p id="descriptor-data" style="display:none;"></p>
+                <img id="popup-image" src="" alt="Face Detection">
+
+                    <div class="popup-buttons-container">
+                        <button id="save-descriptor-btn">Save Descriptor</button>
+                        <button id="upload-descriptor-btn" title="Upload Compressed Descriptor">Upload Descriptor</button>
+                        <input type="file" id="descriptor-file-input" style="display: none;">
+                        <button id="generate-qr-btn">Generate QR</button>
+                        <button id="read-qr-btn">Read QR</button>
+                        <input type="file" id="qr-file-input" accept="image/*" style="display: none;">
+                        <canvas id="qr-canvas"></canvas>
+                    </div>
+            </div>
+
+            <div style="min-width: 300px">
+                <p id="similarity-score"></p>
+            </div>
+
+            <div style="min-width: 300px">
+                <img id="uploaded-image" style="visibility: hidden; position: absolute;" src="" alt="Uploaded Face"
+                    style="width:200px; height:200px; border-radius:5px; margin-left: 20px;">
+                <canvas id="popup-canvas" width="320" height="240" style="border: 1px solid #ddd;"></canvas>
+                
+                <input type="file" id="face-upload" accept="image/*" style="display: none;">
+
+                <div class="popup-buttons-container">
+                    <button onclick="document.getElementById('face-upload').click()">Upload Image</button>
+                    <button id="upload-qr-btn">Upload QR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="loadingIndicator">
+        <div id="loadingSecond">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="js/face-api.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/cameraSetup.cjs"></script>
+    <script src="js/faceDetection.cjs"></script>
+    <script src="js/galleryManagement.cjs"></script>
+    <script src="js/popupManagement.cjs"></script>
+    <script src="js/popupManagement.cjs"></script>
+    <script src="js/faceToQr.cjs"></script>
+    <script src="js/uploadQr.cjs"></script>
+</body>
+
+</html>

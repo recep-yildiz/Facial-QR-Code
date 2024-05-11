@@ -1,0 +1,145 @@
+#content {
+    position: relative;
+    width: 720px;
+    height: 560px;
+}
+
+#video,
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#captureCanvas {
+    display: none;
+}
+
+#qr-canvas {
+    visibility: hidden;
+    position: absolute;
+    z-index: -99999;
+}
+
+.detectionImg {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    transition: transform 0.3s ease;
+}
+
+.detectionImg:hover {
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#detections {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    max-width: 1000px;
+}
+
+.container {
+    position: relative;
+    width: 720px;
+    height: 560px;
+}
+
+#popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#popup-overlay {
+    transition: opacity 0.3s ease;
+}
+
+#popup-overlay:not([style*="display: none"]) {
+    opacity: 1;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+#popup-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+button {
+    margin-bottom: 7px;
+}
+
+#similarity-score {
+    margin: 0 20px;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Lato';
+}
+
+.popup-buttons-container {
+    display: grid;
+    height: 120px;
+}
+
+#loadingIndicator {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+#loadingSecond {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
